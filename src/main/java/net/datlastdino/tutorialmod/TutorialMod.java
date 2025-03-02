@@ -1,5 +1,7 @@
 package net.datlastdino.tutorialmod;
 
+import net.datlastdino.tutorialmod.block.ModBlocks;
+import net.datlastdino.tutorialmod.item.ModItemGroups;
 import net.datlastdino.tutorialmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -12,6 +14,9 @@ public class TutorialMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItemGroups.registerItemGroups();
+
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }
