@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "tutorialmod",
+	"version": "${version}",
+	"name": "TutorialMod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"datlastdino"
+	],
+	"contact": {
+		"homepage": "https://datlastdino.net/",
+		"sources": "https://https://github.com/datlastdino/moditemtutor"
+	},
+	"license": "MIT",
+	"icon": "assets/tutorialmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.datlastdino.tutorialmod.TutorialMod"
+		],
+		"fabric-datagen": [
+			"net.datlastdino.tutorialmod.TutorialModDataGenerator"
+		],
+		"client": [
+			"net.datlastdino.tutorialmod.TutorialModClient"
+		]
+	},
+	"mixins": [
+		"tutorialmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
