@@ -1,11 +1,13 @@
 package net.datlastdino.tutorialmod.block.custom;
 
 import net.datlastdino.tutorialmod.item.ModItems;
+import net.datlastdino.tutorialmod.util.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
@@ -30,12 +32,16 @@ public class MagicBlock extends Block {
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        if (entity instanceof ItemEntity itemEntity) {
-            if (itemEntity.getStack().getItem() == ModItems.RAW_PINK_GARNET) {
-                itemEntity.setStack(new ItemStack(ModItems.PINK_GARNET, itemEntity.getStack().getCount()));
+        if(entity instanceof ItemEntity itemEntity) {
+            if(isValidItem(itemEntity.getStack())) {
+                itemEntity.setStack(new ItemStack(ModItems.STARLIGHT_DUST, itemEntity.getStack().getCount()));
             }
         }
 
         super.onSteppedOn(world, pos, state, entity);
+    }
+
+    private boolean isValidItem(ItemStack stack) {
+        return stack.isIn(ModTags.Items.TRANSFORMABLE_ITEMS);
     }
 }
