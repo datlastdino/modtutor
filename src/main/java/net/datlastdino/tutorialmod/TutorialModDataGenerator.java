@@ -1,9 +1,6 @@
 package net.datlastdino.tutorialmod;
 
-import net.datlastdino.tutorialmod.datagen.ModBlockTagProvider;
-import net.datlastdino.tutorialmod.datagen.ModItemTagProvider;
-import net.datlastdino.tutorialmod.datagen.ModLootTableProvider;
-import net.datlastdino.tutorialmod.datagen.ModModelProvider;
+import net.datlastdino.tutorialmod.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -16,5 +13,6 @@ public class TutorialModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(ModRecipeProvider::new);
 	}
 }
