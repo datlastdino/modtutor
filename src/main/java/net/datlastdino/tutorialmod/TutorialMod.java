@@ -6,6 +6,8 @@ import net.datlastdino.tutorialmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.client.resource.SplashTextResourceSupplier;
+import net.minecraft.client.session.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,4 +24,5 @@ public class TutorialMod implements ModInitializer {
 
 		FuelRegistry.INSTANCE.add(ModItems.STARLIGHT_DUST, 2600);
 	}
+
 }
