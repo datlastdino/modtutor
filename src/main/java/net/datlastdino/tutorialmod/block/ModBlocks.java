@@ -2,18 +2,15 @@ package net.datlastdino.tutorialmod.block;
 
 import net.datlastdino.tutorialmod.TutorialMod;
 import net.datlastdino.tutorialmod.block.custom.MagicBlock;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.datlastdino.tutorialmod.block.custom.PinkGarnetLamp;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
-
-import static net.minecraft.block.Blocks.createLightLevelFromLitBlockState;
 
 public class ModBlocks {
     public static final Block PINK_GARNET_BLOCK = registerBlock("pink_garnet_block",
@@ -41,7 +38,7 @@ public class ModBlocks {
 
     public static final Block PINK_GARNET_BUTTON = registerBlock("pink_garnet_button",
             new ButtonBlock(BlockSetType.IRON, 2, AbstractBlock.Settings.create().strength(2f).requiresTool().noCollision()));
-    public static final Block PINK_GARNET_PRESURE_PLATE = registerBlock("pink_garnet_presure_plate",
+    public static final Block PINK_GARNET_PRESSURE_PLATE = registerBlock("pink_garnet_pressure_plate",
                     new PressurePlateBlock(BlockSetType.IRON, AbstractBlock.Settings.create().strength(2f).requiresTool()));
 
     public static final Block PINK_GARNET_FENCE = registerBlock("pink_garnet_fence",
@@ -56,6 +53,9 @@ public class ModBlocks {
     public static final Block PINK_GARNET_TRAPDOOR = registerBlock("pink_garnet_trapdoor",
             new TrapdoorBlock(BlockSetType.CHERRY,AbstractBlock.Settings.create().strength(2f).requiresTool().nonOpaque()));
 
+    public static final Block PINK_GARNET_LAMP = registerBlock("pink_garnet_lamp",
+            new PinkGarnetLamp(AbstractBlock.Settings.create()
+                    .strength(1f).requiresTool().luminance(state -> state.get(PinkGarnetLamp.CLICKED) ? 15 : 0)));
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(TutorialMod.MOD_ID, name), block);
