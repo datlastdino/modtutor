@@ -21,7 +21,10 @@ public class ChiselItem extends Item {
             Map.of(
                     Blocks.STONE, Blocks.STONE_BRICKS,
                     Blocks.END_STONE, Blocks.END_STONE_BRICKS,
-                    Blocks.OAK_LOG, Blocks.AIR
+                    Blocks.OAK_LOG, Blocks.AIR,
+                    Blocks.STONE_BRICKS, Blocks.STONE,
+                    Blocks.END_STONE_BRICKS, Blocks.END_STONE,
+                    Blocks.OAK_SLAB, Blocks.PETRIFIED_OAK_SLAB
             );
 
     public ChiselItem(Settings settings) {
